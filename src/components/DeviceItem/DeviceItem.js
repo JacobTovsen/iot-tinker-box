@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
   user: state.user,
 });
 
-class InfoPage extends Component {
+class NewDevice extends Component {
   componentDidMount() {
     this.props.dispatch({type: USER_ACTIONS.FETCH_USER});
   }
@@ -26,7 +26,7 @@ class InfoPage extends Component {
       content = (
         <div>
           <p>
-            Info Page
+              This will be the mapped items of devices
           </p>
         </div>
       );
@@ -42,4 +42,4 @@ class InfoPage extends Component {
 }
 
 // this allows us to use <App /> in index.js
-export default connect(mapStateToProps)(InfoPage);
+export default connect(mapStateToProps)(NewDevice);

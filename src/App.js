@@ -9,8 +9,9 @@ import {
 import Header from './components/Header/Header';
 import LoginPage from './components/LoginPage/LoginPage';
 import RegisterPage from './components/RegisterPage/RegisterPage';
-import UserPage from './components/UserPage/UserPage';
-import InfoPage from './components/InfoPage/InfoPage';
+import UserDashboard from './components/UserDashboard/UserDashboard';
+import DeviceOverview from './components/DeviceOverview/DeviceOverview';
+import NewDevice from './components/NewDevice/NewDevice';
 
 import './styles/main.css';
 
@@ -29,12 +30,16 @@ const App = () => (
           component={RegisterPage}
         />
         <Route
-          path="/user"
-          component={UserPage}
+          path="/dashboard"
+          component={UserDashboard}
         />
         <Route
-          path="/info"
-          component={InfoPage}
+          path="/device"
+          component={DeviceOverview}
+        />
+        <Route
+          path="/newDevice"
+          component={NewDevice}
         />
         {/* OTHERWISE (no path!) */}
         <Route render={() => <h1>404</h1>} />
