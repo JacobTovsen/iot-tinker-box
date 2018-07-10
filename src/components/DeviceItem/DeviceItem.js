@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
-import Nav from '../../components/Nav/Nav';
 import { USER_ACTIONS } from '../../redux/actions/userActions';
 
 const mapStateToProps = state => ({
   user: state.user,
 });
 
-class NewDevice extends Component {
+class DeviceItem extends Component {
   componentDidMount() {
     this.props.dispatch({type: USER_ACTIONS.FETCH_USER});
   }
@@ -25,16 +23,17 @@ class NewDevice extends Component {
     if (this.props.user.userName) {
       content = (
         <div>
-          <p>
-              This will be the mapped items of devices
-          </p>
+          <p>Device Nickname: {this.props.device.device_nickname}</p>
+          <p>Device ID: {this.props.device.device_build_id}</p>
+          <p>Device Access Token: {this.props.device.access_token}</p>
+          <p>Device Location: {this.props.device.location}</p>
+          <p>Device Type: {this.props.device.device_type}</p>
         </div>
       );
     }
 
     return (
       <div>
-        <Nav />
         { content }
       </div>
     );
@@ -42,4 +41,4 @@ class NewDevice extends Component {
 }
 
 // this allows us to use <App /> in index.js
-export default connect(mapStateToProps)(NewDevice);
+export default connect(mapStateToProps)(DeviceItem);

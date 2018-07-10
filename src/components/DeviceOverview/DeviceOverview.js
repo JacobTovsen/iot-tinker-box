@@ -4,14 +4,17 @@ import { connect } from 'react-redux';
 import Nav from '../../components/Nav/Nav';
 import { USER_ACTIONS } from '../../redux/actions/userActions';
 import { Link } from 'react-router-dom';
+import DeviceItem from '../DeviceItem/DeviceItem'
 
 const mapStateToProps = state => ({
   user: state.user,
+  devices: state.devices
 });
 
 class DeviceOverview extends Component {
   componentDidMount() {
     this.props.dispatch({type: USER_ACTIONS.FETCH_USER});
+    this.props.dispatch({type: "GET_DEVICES"});
   }
 
   componentDidUpdate() {
@@ -29,6 +32,15 @@ class DeviceOverview extends Component {
           <p>
             Device Overview.  This view will have the existing devices listed.  It will have a button to add a new device.
           </p>
+          <div>
+              {this.props.devices.devicesReducer.map( device => {
+                return <DeviceItem 
+                key = {device.id}
+                device={device}
+                />
+                })
+              }
+          </div>
           <Link to="/newDevice">
             <button>New Device</button>
           </Link>

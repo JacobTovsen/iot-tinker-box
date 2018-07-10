@@ -12,7 +12,7 @@ const Nav = () => (
         </li>
         <li>
           <Link to="/device">
-            Device
+            Devices
           </Link>
         </li>
       </ul>
