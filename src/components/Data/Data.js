@@ -27,23 +27,19 @@ class Data extends Component {
       content = (
         <div>
             <p>Data!</p>
-            <table>
+            <table align="center">
                 <thead>
-                    <tr>
                         <th>Time</th>
                         <th>Temperature</th>
                         <th>Edit</th>
                         <th>Delete</th>
-                    </tr>
                 </thead>
-                <tbody>
                     {this.props.devices.dataReducer.map( dataPoint => {
                         return <DataPoint
                         key = {dataPoint.id}
                         dataPoint={dataPoint}
                         /> 
                     })}
-                </tbody>
             </table>
         </div>
       );

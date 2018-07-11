@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { USER_ACTIONS } from '../../redux/actions/userActions';
+import './DataPoint.css';
 
 const mapStateToProps = state => ({
   user: state.user,
@@ -22,19 +23,19 @@ class DataPoint extends Component {
 
     if (this.props.user.userName) {
       content = (
-        <tr>
+          <tr>
             <td>{this.props.dataPoint.date}</td>
             <td>{this.props.dataPoint.temperature}</td>
             <td><button>Edit</button></td>
             <td><button>Delete</button></td>
-        </tr>
+          </tr>
       );
     }
 
     return (
-      <div>
+      <tbody>
         { content }
-      </div>
+      </tbody>
     );
   }
 }
