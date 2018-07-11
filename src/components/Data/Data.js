@@ -26,7 +26,7 @@ class Data extends Component {
     if (this.props.user.userName) {
       content = (
         <div>
-            <p>Data!</p>
+            <p>Data from Photon</p>
             <table align="center">
                 <thead>
                         <th>Time</th>
