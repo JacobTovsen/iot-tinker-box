@@ -12,6 +12,7 @@ import RegisterPage from './components/RegisterPage/RegisterPage';
 import UserDashboard from './components/UserDashboard/UserDashboard';
 import DeviceOverview from './components/DeviceOverview/DeviceOverview';
 import NewDevice from './components/NewDevice/NewDevice';
+import Data from './components/Data/Data';
 
 import './styles/main.css';
 
@@ -40,6 +41,10 @@ const App = () => (
         <Route
           path="/newDevice"
           component={NewDevice}
+        />
+        <Route
+          path="/data"
+          component={Data}
         />
         {/* OTHERWISE (no path!) */}
         <Route render={() => <h1>404</h1>} />
