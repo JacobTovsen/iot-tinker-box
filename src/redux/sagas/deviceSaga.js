@@ -10,8 +10,18 @@ function* fetchAllDevices(){
     }
 }
 
+function* addNewDevice(action){
+    try{
+        yield call(axios.post, '/api/device', action.payload)
+        yield put({type: 'GET_DEVICES'});
+    } catch (error) {
+        console.log('Error in saga addNewDevice saga:', error);
+    }
+}
+
 function* deviceSaga(){
     yield takeEvery( 'GET_DEVICES', fetchAllDevices);
+    yield takeEvery( 'ADD_DEVICE', addNewDevice);
 }
 
 export default deviceSaga;
