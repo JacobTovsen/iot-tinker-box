@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Nav from '../../components/Nav/Nav';
 import { USER_ACTIONS } from '../../redux/actions/userActions';
 
-import { Link } from 'react-router-dom';
+import { Redirect } from "react-router-dom";
 
 
 const mapStateToProps = state => ({
@@ -17,12 +17,15 @@ class NewDevice extends Component {
       super();
 
       this.state = {
-          nickname: '',
-          build_id: '',
-          access_token: '',
-          location: '',
-          device_type: '',
-          sensor_type: ''
+            
+            nickname: '',
+            build_id: '',
+            access_token: '',
+            location: '',
+            device_type: '',
+            sensor_type: '',
+            deviceComplete: false
+            
       }
   }
   
@@ -39,6 +42,9 @@ class NewDevice extends Component {
   submitNewDevice = () => {
       this.props.dispatch({type:'ADD_DEVICE', payload:this.state});
       alert('Your new device has been submitted!');
+      this.setState({
+          deviceComplete: true
+      })
   }
 
   handleInputChange = (event) => {
@@ -70,6 +76,11 @@ class NewDevice extends Component {
   render() {
     let content = null;
 
+    const {deviceComplete} = this.state;
+    if (deviceComplete) {
+        return <Redirect to='/device'/>
+        }
+    
     if (this.props.user.userName) {
       content = (
         <div>
@@ -112,7 +123,7 @@ class NewDevice extends Component {
                 value={this.state.sensor_type}
                 onChange={this.handleInputChange}
             />
-            <button onClick={this.submitNewDevice} ><Link to="/device">Add Device</Link></button>
+            <button onClick={this.submitNewDevice} >Add Device</button>
         </div>
       );
     }
