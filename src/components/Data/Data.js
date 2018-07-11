@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { USER_ACTIONS } from '../../redux/actions/userActions';
-
+import DataPoint from '../DataPoint/DataPoint';
+import './Data.css';
 const mapStateToProps = state => ({
   user: state.user,
+  devices: state.devices
 });
 
 class Data extends Component {
@@ -24,7 +26,25 @@ class Data extends Component {
     if (this.props.user.userName) {
       content = (
         <div>
-          <p>Data!</p>
+            <p>Data!</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Temperature</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {this.props.devices.dataReducer.map( dataPoint => {
+                        return <DataPoint
+                        key = {dataPoint.id}
+                        dataPoint={dataPoint}
+                        /> 
+                    })}
+                </tbody>
+            </table>
         </div>
       );
     }
