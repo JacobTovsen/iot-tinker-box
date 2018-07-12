@@ -20,9 +20,10 @@ router.get('/', (req, res) => {
 
 router.get('/temp', (req, res) => {
     if (req.isAuthenticated()){
+        console.log('this is req.user:', req.user.id);
         console.log('in GET route to get temp');
-        let queryText = `SELECT * FROM desired_temperature WHERE person_id=${req.user} ORDER BY id DESC limit 1`;
-        pool.query(queryText).then((result) => {
+        let queryText = `SELECT * FROM desired_temperature WHERE person_id=$1 ORDER BY id DESC limit 1`;
+        pool.query(queryText, [req.user.id]).then((result) => {
             res.send(result.rows);
         }).catch((error) => {
             console.log(error);

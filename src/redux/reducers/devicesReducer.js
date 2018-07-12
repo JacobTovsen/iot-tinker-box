@@ -20,15 +20,15 @@ const dataReducer = (state = [], action) => {
     }
 };
 
-const tempReducer = (state = [70], action) => {
+const tempReducer = (state = [], action) => {
     switch (action.type) {
         case 'STORE_TEMP':
-            return action.payload;
+            return action.payload
 
         case 'TEMP_UP':
             return {...state ++};
 
-        case 'TEMP_UP':
+        case 'TEMP_DOWN':
             return {...state --};
         
         default:
