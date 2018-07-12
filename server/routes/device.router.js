@@ -6,8 +6,8 @@ router.get('/', (req, res) => {
     if (req.isAuthenticated()){
         console.log('in GET route to get all devices');
         console.log('user', req.user);
-        let queryText = `SELECT * FROM "device"`;
-        pool.query(queryText).then((result) => {
+        let queryText = `SELECT * FROM device WHERE person_id=$1`;
+        pool.query(queryText, [req.user.id]).then((result) => {
             res.send(result.rows);
         }).catch((error) => {
             console.log(error);
