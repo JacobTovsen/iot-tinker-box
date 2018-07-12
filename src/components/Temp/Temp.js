@@ -23,13 +23,18 @@ class Temp extends Component {
     this.props.dispatch({type: 'DELETE_DATA', payload: id})
   }
 
-  tempUp = (id) => {
-    console.log('in tempUp, this is temp.id:', id);
+  tempUp = (temp) => {
+    console.log('in tempUp, this is temp:', temp);
+    temp ++;
+    console.log('new temp:,', temp);
+    this.props.dispatch({type: 'NEW_TEMP', payload: {temperature:temp}})
   }
 
-  tempDown = (id) => {
-    console.log('in tempDown, this is temp.id:', id);
-
+  tempDown = (temp) => {
+    console.log('in tempDown, this is temp', temp);
+    temp --;
+    console.log('new temp:,', temp);
+    this.props.dispatch({type: 'NEW_TEMP', payload: {temperature: temp}})
   }
 
   render() {
@@ -38,11 +43,11 @@ class Temp extends Component {
     if (this.props.user.userName) {
       content = (
         <div>
-            <button onClick={ () => this.tempUp(this.props.temp.id) }>Temperature Up</button>
+            <button onClick={ () => this.tempUp(this.props.temp.desired_temperature) }>Temperature Up</button>
             <br/>
             {this.props.temp.desired_temperature}
             <br/>
-            <button onClick={ () => this.tempDown(this.props.temp.id) }>Temperature Down</button>
+            <button onClick={ () => this.tempDown(this.props.temp.desired_temperature) }>Temperature Down</button>
         </div>
     
       );

@@ -47,12 +47,22 @@ function* getTemp(){
     }
 }
 
+function* newTemp(action){
+    try{
+        yield call(axios.post, '/api/device/temp', action.payload)
+        yield put({type: 'GET_TEMP'});
+    } catch (error) {
+        console.log('Error in saga addNewDevice:', error);
+    }
+}
+
 function* deviceSaga(){
     yield takeEvery( 'GET_DEVICES', fetchAllDevices);
     yield takeEvery( 'ADD_DEVICE', addNewDevice);
     yield takeEvery( 'GET_DATA', getData );
     yield takeEvery( 'DELETE_DATA', deleteData );
     yield takeEvery( 'GET_TEMP', getTemp);
+    yield takeEvery( 'NEW_TEMP', newTemp);
 }
 
 export default deviceSaga;

@@ -75,6 +75,26 @@ router.post('/', (req, res) => {
     } 
 });
 
+router.post('/temp', (req, res) => {
+    if (req.isAuthenticated()){
+        console.log('this is req.body for TEMPERATURE:', req.body.temperature);
+        const queryText = `INSERT INTO desired_temperature ("desired_temperature", person_id)
+        VALUES($1, $2)`;
+        pool.query(queryText, [
+            req.body.temperature,
+            req.user.id
+        ]).then((result) => {
+            console.log('back from db with:', result);
+            res.sendStatus(200);
+        }).catch((error) => {
+            console.log('error in POST', error);
+            res.sendStatus(500);
+        })
+    } else {
+        res.sendStatus(403);
+    } 
+});
+
 router.delete('/:id', (req, res) => {
     console.log('this is req.params',req.params);
     if(req.isAuthenticated()){

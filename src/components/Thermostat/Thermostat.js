@@ -20,19 +20,6 @@ class Thermostat extends Component {
     }
   }
 
-  deleteData = (id) => {
-    console.log('this is deleteData id:', id);
-    this.props.dispatch({type: 'DELETE_DATA', payload: id})
-  }
-
-  tempUp = (id) => {
-    console.log('in tempUp, this is temp.id:', id);
-  }
-
-  tempDown() {
-
-  }
-
   render() {
     let content = null;
 
