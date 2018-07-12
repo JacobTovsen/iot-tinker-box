@@ -29,10 +29,12 @@ class Data extends Component {
             <p>Data from Photon</p>
             <table align="center">
                 <thead>
+                    <tr>
                         <th>Time</th>
                         <th>Temperature</th>
                         <th>Edit</th>
                         <th>Delete</th>
+                    </tr>
                 </thead>
                     {this.props.devices.dataReducer.map( dataPoint => {
                         return <DataPoint

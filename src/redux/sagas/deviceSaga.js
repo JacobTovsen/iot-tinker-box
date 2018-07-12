@@ -21,10 +21,29 @@ function* addNewDevice(action){
 
 function* getData(){
     try{
-        const data = yield call(axios.get, 'api/device/data');
+        const data = yield call(axios.get, '/api/device/data');
         yield put({type: 'STORE_DATA', payload: data.data})
     } catch (error) {
         console.log('Error in saga getData:', error);
+    }
+}
+
+function* deleteData(action){
+    try{
+        console.log('this is action.payload:', action.payload);
+        yield call(axios.delete, `/api/device/${action.payload}`);
+        yield put({type:'GET_DATA'});
+    } catch (error ) {
+        console.log('Error in saga deleteData:', error);
+    }
+}
+
+function* getTemp(){
+    try{
+        const temp = yield call(axios.get, '/api/device/temp');
+        yield put({type: 'STORE_TEMP', payload: temp.data})
+    } catch (error) {
+        console.log('Error in saga getTemp:', error);
     }
 }
 
@@ -32,6 +51,8 @@ function* deviceSaga(){
     yield takeEvery( 'GET_DEVICES', fetchAllDevices);
     yield takeEvery( 'ADD_DEVICE', addNewDevice);
     yield takeEvery( 'GET_DATA', getData );
+    yield takeEvery( 'DELETE_DATA', deleteData );
+    yield takeEvery( 'GET_TEMP', getTemp);
 }
 
 export default deviceSaga;

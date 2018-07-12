@@ -20,7 +20,24 @@ const dataReducer = (state = [], action) => {
     }
 };
 
+const tempReducer = (state = [70], action) => {
+    switch (action.type) {
+        case 'STORE_TEMP':
+            return action.payload;
+
+        case 'TEMP_UP':
+            return {...state ++};
+
+        case 'TEMP_UP':
+            return {...state --};
+        
+        default:
+            return state;
+    }
+};
+
 export default combineReducers({
     devicesReducer,
-    dataReducer
+    dataReducer,
+    tempReducer
 });

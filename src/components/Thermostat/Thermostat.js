@@ -4,11 +4,13 @@ import { USER_ACTIONS } from '../../redux/actions/userActions';
 
 const mapStateToProps = state => ({
   user: state.user,
+  devices: state.devices
 });
 
-class DataPoint extends Component {
+class Thermostat extends Component {
   componentDidMount() {
     this.props.dispatch({type: USER_ACTIONS.FETCH_USER});
+    this.props.dispatch({type:'GET_TEMP'});
   }
 
   componentDidUpdate() {
@@ -27,12 +29,14 @@ class DataPoint extends Component {
 
     if (this.props.user.userName) {
       content = (
-          <tr>
-            <td>{this.props.dataPoint.date}</td>
-            <td>{this.props.dataPoint.temperature}</td>
-            <td><button>Edit</button></td>
-            <td><button onClick={ () => this.deleteData(this.props.dataPoint.id) }>Delete</button></td>
-          </tr>
+        <div>
+            <button>Temperature Up</button>
+            <p>{this.props.devices.tempReducer}</p>
+            <button>Temperature Up</button>
+
+            
+        </div>
+    
       );
     }
 
@@ -45,4 +49,4 @@ class DataPoint extends Component {
 }
 
 // this allows us to use <App /> in index.js
-export default connect(mapStateToProps)(DataPoint);
+export default connect(mapStateToProps)(Thermostat);
