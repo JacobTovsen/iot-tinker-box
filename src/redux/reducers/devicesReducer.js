@@ -36,8 +36,18 @@ const tempReducer = (state = [], action) => {
     }
 };
 
+const newestTempReducer = (state = [], action) => {
+    switch (action.type) {
+        case 'STORE_NEWEST_TEMP':
+            return action.payload
+        default:
+            return state;
+    }
+};
+
 export default combineReducers({
     devicesReducer,
     dataReducer,
-    tempReducer
+    tempReducer,
+    newestTempReducer
 });

@@ -10,17 +10,13 @@ const mapStateToProps = state => ({
 class Temp extends Component {
   componentDidMount() {
     this.props.dispatch({type: USER_ACTIONS.FETCH_USER});
+    this.props.dispatch({type: 'GET_NEWEST_TEMP'});
   }
 
   componentDidUpdate() {
     if (!this.props.user.isLoading && this.props.user.userName === null) {
       this.props.history.push('home');
     }
-  }
-
-  deleteData = (id) => {
-    console.log('this is deleteData id:', id);
-    this.props.dispatch({type: 'DELETE_DATA', payload: id})
   }
 
   tempUp = (temp) => {
@@ -43,13 +39,17 @@ class Temp extends Component {
     if (this.props.user.userName) {
       content = (
         <div>
+            <div>
+                <p>Current temperature reading from device:</p>
+                {this.props.devices.newestTempReducer.map( temp => 
+                                    <p key={temp.id}>{temp.temperature}</p>
+                            )} 
+            </div>
             <button onClick={ () => this.tempUp(this.props.temp.desired_temperature) }>Temperature Up</button>
             <br/>
-            {this.props.temp.desired_temperature}
-            <br/>
+            <p>Desired Temperature: {this.props.temp.desired_temperature}</p>
             <button onClick={ () => this.tempDown(this.props.temp.desired_temperature) }>Temperature Down</button>
             <br/>
-            <p>Current temperature reading from device: </p>
         </div>
     
       );
