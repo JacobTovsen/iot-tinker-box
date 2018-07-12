@@ -12,7 +12,7 @@ class Temp extends Component {
   constructor(props){
     super(props);
     this.state = {
-        temperature: '',
+        sensorTemperature: 70,
         heating: true
     }
   }
@@ -20,7 +20,6 @@ class Temp extends Component {
     componentDidMount() {
     this.props.dispatch({type: USER_ACTIONS.FETCH_USER});
     this.props.dispatch({type: 'GET_NEWEST_TEMP'});
-    this.isHeating();
   }
 
   componentDidUpdate() {
@@ -41,29 +40,34 @@ class Temp extends Component {
     temp --;
     console.log('new temp:,', temp);
     this.props.dispatch({type: 'NEW_TEMP', payload: {temperature: temp}})
-    this.setState({temperature: temp});
-    console.log('this state temperateure is:', this.state.temperature)
   }
 
   isHeating() {
-    
+
   }
 
   render() {
     let content = null;
+    // if ( parseInt(this.props.devices.newestTempReducer[0].temperature) > 80 ) {
+    //     this.setState({
+    //         tempClass: 'hot'
+    //     })
+    // }
 
     if (this.props.user.userName) {
       content = (
         <div>
             <button onClick={ () => this.tempUp(this.props.temp.desired_temperature) }>Temperature Up</button>
             <br/>
-            <p className="heating ? 'heating' : 'cooling'">Desired Temperature: {this.props.temp.desired_temperature}</p>
+            <p className={"heating ? 'heating' : 'cooling'"}>Desired Temperature: {this.props.temp.desired_temperature}</p>
             <button onClick={ () => this.tempDown(this.props.temp.desired_temperature) }>Temperature Down</button>
             <br/>
                 <p>Current temperature reading from device:</p>
             <div>
                 {this.props.devices.newestTempReducer.map( temp => 
-                                    <p key={temp.id}>{temp.temperature}</p>
+                                    <div key={temp.id}>
+                                        <p>{temp.temperature}</p>
+                                    </div>
                             )} 
             </div>
         </div>

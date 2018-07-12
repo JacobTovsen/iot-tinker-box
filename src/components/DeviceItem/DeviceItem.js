@@ -29,7 +29,12 @@ class DeviceItem extends Component {
           <p>Device Access Token: {this.props.device.access_token}</p>
           <p>Device Location: {this.props.device.device_location}</p>
           <p>Device Type: {this.props.device.device_type}</p>
-          <button><Link to="/data">Data</Link></button>
+          <Link to="/data">
+            <button>Data</button>
+          </Link>
+          <Link to="/graphs">
+            <button>Graphs</button>
+          </Link>
           <p>Change the link to data to make a get based on device id</p>
         </div>
       );
