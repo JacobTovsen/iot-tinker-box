@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { USER_ACTIONS } from '../../redux/actions/userActions';
+import { Link } from 'react-router-dom';
 
 const mapStateToProps = state => ({
   user: state.user,
@@ -26,8 +27,10 @@ class DeviceItem extends Component {
           <p>Device Nickname: {this.props.device.device_nickname}</p>
           <p>Device ID: {this.props.device.device_build_id}</p>
           <p>Device Access Token: {this.props.device.access_token}</p>
-          <p>Device Location: {this.props.device.location}</p>
+          <p>Device Location: {this.props.device.device_location}</p>
           <p>Device Type: {this.props.device.device_type}</p>
+          <button><Link to="/data">Data</Link></button>
+          <p>Change the link to data to make a get based on device id</p>
         </div>
       );
     }

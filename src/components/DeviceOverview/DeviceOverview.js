@@ -5,7 +5,7 @@ import Nav from '../../components/Nav/Nav';
 import { USER_ACTIONS } from '../../redux/actions/userActions';
 import { Link } from 'react-router-dom';
 import DeviceItem from '../DeviceItem/DeviceItem';
-import Thermostat from '../Thermostat/Thermostat';
+import './DeviceOverview.css';
 
 const mapStateToProps = state => ({
   user: state.user,
@@ -30,15 +30,11 @@ class DeviceOverview extends Component {
     if (this.props.user.userName) {
       content = (
         <div>
-          
           <div>
-            <Thermostat/>
-          </div>
-          <div>
-            <p>
+            <p className="deviceDiv">
               Device Overview.  This view will have the existing devices listed.  It will have a button to add a new device.
             </p>
-            <div>
+            <div className="deviceDiv">
                 {this.props.devices.devicesReducer.map( device => {
                   return <DeviceItem 
                   key = {device.id}

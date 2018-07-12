@@ -48,6 +48,8 @@ class Temp extends Component {
             {this.props.temp.desired_temperature}
             <br/>
             <button onClick={ () => this.tempDown(this.props.temp.desired_temperature) }>Temperature Down</button>
+            <br/>
+            <p>Current temperature reading from device: </p>
         </div>
     
       );

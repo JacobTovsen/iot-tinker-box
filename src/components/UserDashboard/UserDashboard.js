@@ -6,6 +6,8 @@ import Nav from '../../components/Nav/Nav';
 import { USER_ACTIONS } from '../../redux/actions/userActions';
 import { triggerLogout } from '../../redux/actions/loginActions';
 // import { Link } from 'react-router-dom';
+import Thermostat from '../Thermostat/Thermostat';
+import './UserDashboard.css';
 
 
 
@@ -39,9 +41,9 @@ class UserDashboard extends Component {
           >
             Welcome, { this.props.user.userName }!
           </h3>
-          <p>
-            Dashboard - This view will have the current temperature or most recent reading.  It will have a button to have desired temp up, button down.  Log each click for new desired temp to database.  Reference most recent vs current temp and color the heating or cooling block appropriately.
-          </p>
+          <div className="thermostatDiv">
+            <Thermostat/>
+          </div>
           <button
             onClick={this.logout}
           >

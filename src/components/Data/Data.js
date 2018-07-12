@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { USER_ACTIONS } from '../../redux/actions/userActions';
+import Nav from '../Nav/Nav';
 import DataPoint from '../DataPoint/DataPoint';
 import './Data.css';
 const mapStateToProps = state => ({
@@ -49,8 +50,9 @@ class Data extends Component {
 
     return (
       <div>
-        { content }
-      </div>
+      <Nav />
+      { content }
+    </div>
     );
   }
 }
