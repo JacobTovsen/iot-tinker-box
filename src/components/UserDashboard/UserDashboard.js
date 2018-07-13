@@ -11,16 +11,23 @@ import './UserDashboard.css';
 
 import Button from '@material-ui/core/Button';
 
-
-
-
 const mapStateToProps = state => ({
   user: state.user,
+  devices: state.devices
 });
 
 class UserDashboard extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+        temperature: 0,
+    }
+  }
+  
   componentDidMount() {
     this.props.dispatch({ type: USER_ACTIONS.FETCH_USER });
+    this.props.dispatch({type: 'GET_DATA'});
+
   }
 
   componentDidUpdate() {
@@ -35,7 +42,6 @@ class UserDashboard extends Component {
 
   render() {
     let content = null;
-
     if (this.props.user.userName) {
       content = (
         <div>

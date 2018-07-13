@@ -6,6 +6,7 @@ import { USER_ACTIONS } from '../../redux/actions/userActions';
 import { Link } from 'react-router-dom';
 import DeviceItem from '../DeviceItem/DeviceItem';
 import './DeviceOverview.css';
+import DeviceCard from '../DeviceCard/DeviceCard';
 
 import Button from '@material-ui/core/Button';
 
@@ -35,11 +36,11 @@ class DeviceOverview extends Component {
         <div>
           <div>
             <p className="deviceDiv">
-              Device Overview.  This view will have the existing devices listed.  It will have a button to add a new device.
+              Devices:
             </p>
             <div className="deviceDiv">
                 {this.props.devices.devicesReducer.map( device => {
-                  return <DeviceItem 
+                  return <DeviceCard
                   key = {device.id}
                   device={device}
                   />

@@ -5,7 +5,7 @@ import Nav from '../../components/Nav/Nav';
 import { USER_ACTIONS } from '../../redux/actions/userActions';
 
 import { Redirect } from "react-router-dom";
-
+import Input from '@material-ui/core/Input';
 
 const mapStateToProps = state => ({
   user: state.user,
@@ -87,37 +87,37 @@ class NewDevice extends Component {
             <p>
               Add a new device
             </p>
-            <input 
+            <Input 
                 placeholder="Device Nickname" 
                 id="nickname"
                 value={this.state.nickname}
                 onChange={this.handleInputChange}
             />
-            <input 
+            <Input 
                 placeholder="Device Build ID" 
                 id="build_id"
                 value={this.state.build_id}
                 onChange={this.handleInputChange}
             />
-            <input 
+            <Input 
                 placeholder="Device Access Token" 
                 id="access_token"
                 value={this.state.access_token}
                 onChange={this.handleInputChange}
             />
-            <input 
+            <Input 
                 placeholder="Device Location" 
                 id="location"
                 value={this.state.location}
                 onChange={this.handleInputChange}
             />
-            <input 
+            <Input 
                 placeholder="Device Type" 
                 id="device_type"
                 value={this.state.device_type}
                 onChange={this.handleInputChange}
             />
-            <input 
+            <Input 
                 placeholder="Sensor Type" 
                 id="sensor_type"
                 value={this.state.sensor_type}
