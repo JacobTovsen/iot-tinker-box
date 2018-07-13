@@ -7,6 +7,9 @@ import { Link } from 'react-router-dom';
 import DeviceItem from '../DeviceItem/DeviceItem';
 import './DeviceOverview.css';
 
+import Button from '@material-ui/core/Button';
+
+
 const mapStateToProps = state => ({
   user: state.user,
   devices: state.devices
@@ -44,7 +47,7 @@ class DeviceOverview extends Component {
                 }
             </div>
             <Link to="/newDevice">
-              <button>New Device</button>
+              <Button variant="raised" color="primary">New Device</Button>
             </Link>
           </div>
         </div>

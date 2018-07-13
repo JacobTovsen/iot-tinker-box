@@ -14,6 +14,7 @@ import DeviceOverview from './components/DeviceOverview/DeviceOverview';
 import NewDevice from './components/NewDevice/NewDevice';
 import Data from './components/Data/Data';
 import Graphs from './components/Graphs/Graphs';
+import EditModal from './components/EditModal/EditModal';
 
 import './styles/main.css';
 
@@ -50,6 +51,10 @@ const App = () => (
         <Route
           path="/graphs"
           component={Graphs}
+        />
+        <Route
+          path="/editModal"
+          component={EditModal}
         />
         {/* OTHERWISE (no path!) */}
         <Route render={() => <h1>404</h1>} />

@@ -9,6 +9,9 @@ import { triggerLogout } from '../../redux/actions/loginActions';
 import Thermostat from '../Thermostat/Thermostat';
 import './UserDashboard.css';
 
+import Button from '@material-ui/core/Button';
+
+
 
 
 const mapStateToProps = state => ({
@@ -44,11 +47,11 @@ class UserDashboard extends Component {
           <div className="thermostatDiv">
             <Thermostat/>
           </div>
-          <button
+          <Button variant="raised" color="primary"
             onClick={this.logout}
           >
             Log Out
-          </button>
+          </Button>
         </div>
       );
     }
