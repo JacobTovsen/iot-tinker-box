@@ -12,13 +12,14 @@ import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import red from '@material-ui/core/colors/red';
-import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { connect } from 'react-redux';
 import { compose } from "redux";
 import './DeviceCard.css';
+import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom';
+
 
 const mapStateToProps = state => ({
     user: state.user,
@@ -69,11 +70,6 @@ class DeviceCard extends React.Component {
                 R
               </Avatar>
             }
-            action={
-              <IconButton>
-                <MoreVertIcon />
-              </IconButton>
-            }
             title={this.props.device.device_nickname}
             subheader={this.props.device.device_location}
           />
@@ -88,9 +84,9 @@ class DeviceCard extends React.Component {
             </Typography>
           </CardContent>
           <CardActions className={classes.actions} disableActionSpacing>
-            <IconButton aria-label="Add to favorites">
-              <FavoriteIcon />
-            </IconButton>
+          <Link to="/data">
+            <Button variant="raised" color="primary">Data</Button>
+          </Link>
             <IconButton aria-label="Share">
               <ShareIcon />
             </IconButton>

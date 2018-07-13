@@ -26,7 +26,7 @@ class DataPoint extends Component {
     if (this.props.user.userName) {
       content = (
           <tr>
-            <td>{this.props.dataPoint.date}</td>
+            <td>{this.props.dataPoint.date.split('T')[0]}</td>
             <td>{this.props.dataPoint.temperature}</td>
             <td><EditModal dataPoint={this.props.dataPoint}/></td>
             <td><DeleteModal dataPoint={this.props.dataPoint}/></td>

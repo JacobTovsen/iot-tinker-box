@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import Nav from '../../components/Nav/Nav';
 import { USER_ACTIONS } from '../../redux/actions/userActions';
 import { Link } from 'react-router-dom';
-import DeviceItem from '../DeviceItem/DeviceItem';
 import './DeviceOverview.css';
 import DeviceCard from '../DeviceCard/DeviceCard';
 
@@ -30,7 +29,6 @@ class DeviceOverview extends Component {
 
   render() {
     let content = null;
-
     if (this.props.user.userName) {
       content = (
         <div>

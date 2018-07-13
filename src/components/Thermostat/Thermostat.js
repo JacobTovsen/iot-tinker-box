@@ -11,7 +11,7 @@ const mapStateToProps = state => ({
 class Thermostat extends Component {
   componentDidMount() {
     this.props.dispatch({type: USER_ACTIONS.FETCH_USER});
-    // this.props.dispatch({type:'GET_TEMP'});
+    this.props.dispatch({type:'GET_TEMP'});
   }
 
   componentDidUpdate() {
