@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 import { USER_ACTIONS } from '../../redux/actions/userActions';
 import { Link } from 'react-router-dom';
 
+import Button from '@material-ui/core/Button';
+
+
 const mapStateToProps = state => ({
   user: state.user,
 });
@@ -30,10 +33,10 @@ class DeviceItem extends Component {
           <p>Device Location: {this.props.device.device_location}</p>
           <p>Device Type: {this.props.device.device_type}</p>
           <Link to="/data">
-            <button>Data</button>
+            <Button variant="raised" color="primary">Data</Button>
           </Link>
           <Link to="/graphs">
-            <button>Graphs</button>
+            <Button variant="raised" color="primary">Graphs</Button>
           </Link>
           <p>Change the link to data to make a get based on device id</p>
         </div>

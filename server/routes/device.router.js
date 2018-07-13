@@ -123,4 +123,18 @@ router.delete('/:id', (req, res) => {
     }
 });
 
+router.put('/data/edit/:id', (req, res) => {
+    console.log('this is req.params',req.params);
+    console.log('this is req.body:', req.body);
+    if(req.isAuthenticated()){
+        queryText = `UPDATE sensor_data SET temperature = $2 where id = $1;`;
+        pool.query(queryText, [req.body.id, req.body.edit_value]).then(result => {
+            res.sendStatus(200);
+        }).catch(error => {
+            console.log('Error handling DELETE for /data:', error);});
+    } else {
+        res.sendStatus(403);
+    }
+});
+
 module.exports = router;

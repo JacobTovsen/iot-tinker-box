@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { USER_ACTIONS } from '../../redux/actions/userActions';
 import './Temp.css';
 
+import Button from '@material-ui/core/Button';
+
 const mapStateToProps = state => ({
   user: state.user,
   devices: state.devices
@@ -57,10 +59,10 @@ class Temp extends Component {
     if (this.props.user.userName) {
       content = (
         <div>
-            <button onClick={ () => this.tempUp(this.props.temp.desired_temperature) }>Temperature Up</button>
+            <Button vairant="raised" color="primary" onClick={ () => this.tempUp(this.props.temp.desired_temperature) }>Temperature Up</Button>
             <br/>
             <p className={"heating ? 'heating' : 'cooling'"}>Desired Temperature: {this.props.temp.desired_temperature}</p>
-            <button onClick={ () => this.tempDown(this.props.temp.desired_temperature) }>Temperature Down</button>
+            <Button vairant="raised" color="primary" onClick={ () => this.tempDown(this.props.temp.desired_temperature) }>Temperature Down</Button>
             <br/>
                 <p>Current temperature reading from device:</p>
             <div>

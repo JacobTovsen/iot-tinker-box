@@ -65,6 +65,16 @@ function* getNewestTemp(){
     }
 }
 
+function* editData(action){
+    try{
+        console.log(action.payload);
+        yield call(axios.put, `/api/device/data/edit/${action.payload.id}`, action.payload);
+        yield put({type:'GET_DATA'});
+    } catch (error) {
+        console.log('Error in saga editData', error);
+    }
+}
+
 function* deviceSaga(){
     yield takeEvery( 'GET_DEVICES', fetchAllDevices);
     yield takeEvery( 'ADD_DEVICE', addNewDevice);
@@ -73,6 +83,7 @@ function* deviceSaga(){
     yield takeEvery( 'GET_TEMP', getTemp);
     yield takeEvery( 'NEW_TEMP', newTemp);
     yield takeEvery( 'GET_NEWEST_TEMP', getNewestTemp);
+    yield takeEvery( 'EDIT_DATA', editData);
 }
 
 export default deviceSaga;

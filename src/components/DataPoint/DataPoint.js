@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { USER_ACTIONS } from '../../redux/actions/userActions';
+// import Modal from '@material-ui/core/Modal';
+import EditModal from '../EditModal/EditModal';
+import DeleteModal from '../DeleteModal/DeleteModal';
 
 const mapStateToProps = state => ({
   user: state.user,
@@ -17,11 +20,6 @@ class DataPoint extends Component {
     }
   }
 
-  deleteData = (id) => {
-    console.log('this is deleteData id:', id);
-    this.props.dispatch({type: 'DELETE_DATA', payload: id})
-  }
-
   render() {
     let content = null;
 
@@ -30,8 +28,8 @@ class DataPoint extends Component {
           <tr>
             <td>{this.props.dataPoint.date}</td>
             <td>{this.props.dataPoint.temperature}</td>
-            <td><button>Edit</button></td>
-            <td><button onClick={ () => this.deleteData(this.props.dataPoint.id) }>Delete</button></td>
+            <td><EditModal dataPoint={this.props.dataPoint}/></td>
+            <td><DeleteModal dataPoint={this.props.dataPoint}/></td>
           </tr>
       );
     }
