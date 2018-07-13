@@ -67,7 +67,7 @@ class DeviceCard extends React.Component {
           <CardHeader
             avatar={
               <Avatar aria-label="Recipe" className={classes.avatar}>
-                R
+                {this.props.device.id}
               </Avatar>
             }
             title={this.props.device.device_nickname}
