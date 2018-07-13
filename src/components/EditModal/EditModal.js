@@ -90,9 +90,6 @@ class EditModal extends React.Component {
             <Typography variant="title" id="modal-title">
               Edit Temperature Data Point
             </Typography>
-            <Typography variant="subheading" id="simple-modal-description">
-              This does not work yet!
-            </Typography>
             <Input
                 placeholder="Enter New Value Here" 
                 id="edit_value"
