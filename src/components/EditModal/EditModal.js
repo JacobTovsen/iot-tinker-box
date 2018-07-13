@@ -64,7 +64,7 @@ class EditModal extends React.Component {
 
   editDataPoint = (id) => {
     console.log('id:', id, 'edit_value:', this.state.edit_value);
-    let editTemp = parseInt(this.state.edit_value);
+    let editTemp = Number(this.state.edit_value);
     let toSend = {
         id: id, 
         edit_value: editTemp

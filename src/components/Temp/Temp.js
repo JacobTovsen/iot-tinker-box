@@ -61,7 +61,7 @@ class Temp extends Component {
         <div>
             <Button vairant="raised" color="primary" onClick={ () => this.tempUp(this.props.temp.desired_temperature) }>Temperature Up</Button>
             <br/>
-            <p className={"heating ? 'heating' : 'cooling'"}>Desired Temperature: {this.props.temp.desired_temperature}</p>
+            <p>Desired Temperature: {this.props.temp.desired_temperature}</p>
             <Button vairant="raised" color="primary" onClick={ () => this.tempDown(this.props.temp.desired_temperature) }>Temperature Down</Button>
             <br/>
                 <p>Current temperature reading from device:</p>

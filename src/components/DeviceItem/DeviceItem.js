@@ -38,7 +38,10 @@ class DeviceItem extends Component {
           <Link to="/graphs">
             <Button variant="raised" color="primary">Graphs</Button>
           </Link>
-          <p>Change the link to data to make a get based on device id</p>
+          <br/>
+          <br/>
+          <Button variant="raised" color="primary">Edit</Button>
+          <Button variant="raised" color="primary">Delete</Button>
         </div>
       );
     }

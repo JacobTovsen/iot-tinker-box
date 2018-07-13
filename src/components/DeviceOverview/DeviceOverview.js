@@ -46,6 +46,7 @@ class DeviceOverview extends Component {
                   })
                 }
             </div>
+            <br/>
             <Link to="/newDevice">
               <Button variant="raised" color="primary">New Device</Button>
             </Link>
