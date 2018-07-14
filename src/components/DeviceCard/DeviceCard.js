@@ -12,7 +12,6 @@ import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import red from '@material-ui/core/colors/red';
-import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { connect } from 'react-redux';
 import { compose } from "redux";
@@ -41,10 +40,10 @@ const styles = theme => ({
     transition: theme.transitions.create('transform', {
       duration: theme.transitions.duration.shortest,
     }),
-    marginLeft: 'auto',
+    marginLeft: '25px',
   },
   expandOpen: {
-    transform: 'rotate(180deg)',
+    transform: 'rotate(360deg)',
   },
   avatar: {
     backgroundColor: red[500],
@@ -84,12 +83,12 @@ class DeviceCard extends React.Component {
             </Typography>
           </CardContent>
           <CardActions className={classes.actions} disableActionSpacing>
-          <Link to="/data">
+          <Link to="/data" style={{ textDecoration: 'none' }} style={{ margin:"5px"}}>
             <Button variant="raised" color="primary">Data</Button>
           </Link>
-            <IconButton aria-label="Share">
-              <ShareIcon />
-            </IconButton>
+          <Link to="/graphs" style={{ textDecoration: 'none' }} style={{ margin:"5px"}}>
+            <Button variant="raised" color="primary">Graphs</Button>
+          </Link>
             <IconButton
               className={classnames(classes.expand, {
                 [classes.expandOpen]: this.state.expanded,
@@ -98,7 +97,7 @@ class DeviceCard extends React.Component {
               aria-expanded={this.state.expanded}
               aria-label="Show more"
             >
-              <ExpandMoreIcon />
+              <ExpandMoreIcon />More
             </IconButton>
           </CardActions>
           <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>

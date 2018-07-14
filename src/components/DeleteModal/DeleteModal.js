@@ -60,7 +60,7 @@ class DeleteModal extends React.Component {
 
     return (
       <div>
-        <Button onClick={this.handleOpen}>Delete</Button>
+        <Button variant="raised" color="secondary" onClick={this.handleOpen}>Delete This Data Point</Button>
         <Modal
           aria-labelledby="simple-modal-title"
           aria-describedby="simple-modal-description"

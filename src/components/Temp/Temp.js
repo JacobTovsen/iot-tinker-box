@@ -50,11 +50,6 @@ class Temp extends Component {
 
   render() {
     let content = null;
-    // if ( parseInt(this.props.devices.newestTempReducer[0].temperature) > 80 ) {
-    //     this.setState({
-    //         tempClass: 'hot'
-    //     })
-    // }
 
     if (this.props.user.userName) {
       content = (

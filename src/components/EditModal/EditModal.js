@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import Modal from '@material-ui/core/Modal';
 import Button from '@material-ui/core/Button';
 import Input from '@material-ui/core/Input';
-
+import DeleteModal from '../DeleteModal/DeleteModal';
 const mapStateToProps = state => ({
     user: state.user,
   });
@@ -91,7 +91,7 @@ class EditModal extends React.Component {
               Edit Temperature Data Point
             </Typography>
             <Input
-                placeholder="Enter New Value Here" 
+                placeholder="Enter New Value" 
                 id="edit_value"
                 value={this.state.edit_value}
                 onChange={this.handleInputChange}
@@ -99,6 +99,8 @@ class EditModal extends React.Component {
             </Input>
             <Button onClick={ () => this.editDataPoint(this.props.dataPoint.id) }>Submit</Button>
             <Button onClick={this.handleClose}>Close</Button>
+            <DeleteModal dataPoint={this.props.dataPoint}/>
+
           </div>
         </Modal>
       </div>

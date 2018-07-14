@@ -20,7 +20,7 @@ import './styles/main.css';
 
 const App = () => (
   <div>
-    <Header title="Project Base" />
+    <Header title="IoT Temp Tracker" />
     <Router>
       <Switch>
         <Redirect exact from="/" to="/home" />

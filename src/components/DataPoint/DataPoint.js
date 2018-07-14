@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { USER_ACTIONS } from '../../redux/actions/userActions';
 // import Modal from '@material-ui/core/Modal';
 import EditModal from '../EditModal/EditModal';
-import DeleteModal from '../DeleteModal/DeleteModal';
 
 const mapStateToProps = state => ({
   user: state.user,
@@ -26,10 +25,9 @@ class DataPoint extends Component {
     if (this.props.user.userName) {
       content = (
           <tr>
-            <td>{this.props.dataPoint.date.split('T')[0]}</td>
+            <td>{this.props.dataPoint.date}</td>
             <td>{this.props.dataPoint.temperature}</td>
             <td><EditModal dataPoint={this.props.dataPoint}/></td>
-            <td><DeleteModal dataPoint={this.props.dataPoint}/></td>
           </tr>
       );
     }

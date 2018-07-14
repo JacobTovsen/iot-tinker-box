@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 class RegisterPage extends Component {
   constructor(props) {
@@ -73,10 +75,10 @@ class RegisterPage extends Component {
           <h1>Register User</h1>
           <div>
             <label htmlFor="username">
-              Username:
-              <input
+              <TextField
                 type="text"
                 name="username"
+                label="Username"
                 value={this.state.username}
                 onChange={this.handleInputChangeFor('username')}
               />
@@ -84,22 +86,22 @@ class RegisterPage extends Component {
           </div>
           <div>
             <label htmlFor="password">
-              Password:
-              <input
+              <TextField
                 type="password"
                 name="password"
+                label="Password"
                 value={this.state.password}
                 onChange={this.handleInputChangeFor('password')}
               />
             </label>
           </div>
           <div>
-            <input
+            <Button
               type="submit"
               name="submit"
               value="Register"
-            />
-            <Link to="/home">Cancel</Link>
+            >Submit</Button>
+            <Link to="/home" style={{ textDecoration: 'none' }}><Button>Cancel</Button></Link>
           </div>
         </form>
       </div>

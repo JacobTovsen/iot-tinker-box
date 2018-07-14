@@ -33,6 +33,10 @@ class DeviceOverview extends Component {
       content = (
         <div>
           <div>
+            <br/>
+            <Link to="/newDevice" style={{ textDecoration: 'none' }}>
+              <Button variant="raised" color="primary">Add New Device</Button>
+            </Link>
             <p className="deviceDiv">
               Devices:
             </p>
@@ -45,10 +49,6 @@ class DeviceOverview extends Component {
                   })
                 }
             </div>
-            <br/>
-            <Link to="/newDevice">
-              <Button variant="raised" color="primary">New Device</Button>
-            </Link>
           </div>
         </div>
       );

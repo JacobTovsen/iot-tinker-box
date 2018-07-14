@@ -34,7 +34,7 @@ class Data extends Component {
                         <th>Time</th>
                         <th>Temperature</th>
                         <th>Edit</th>
-                        <th>Delete</th>
+                        {/* <th>Delete</th> */}
                     </tr>
                 </thead>
                     {this.props.devices.dataReducer.map( dataPoint => {

@@ -1,22 +1,25 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: lightgray;
 }
 
 .instructions h1 {
     font-size: 24px;
     font-weight: 700;
+    margin: 5px;
+    text-align: center;
 }
 
 .instructions {
-    background-color: #00acb0;
+    background-color: darkslateblue;
     padding: 5px;
     color: #ece7e7;
 }
 
 form {
     background-color: #dbd5d5;
-    width: 30%;
-    height: 250px;
+    width: 50%;
+    height: inherit;
     margin: 20px auto;
     padding: 25px;
     border-radius: 2px;
