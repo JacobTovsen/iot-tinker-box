@@ -67,6 +67,7 @@ class EditModal extends React.Component {
     }
     this.props.dispatch({type: 'EDIT_DATA', payload: toSend})
     this.setState({edit_value:''});
+    this.handleClose();
   }
 
 
