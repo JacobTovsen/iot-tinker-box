@@ -3,8 +3,11 @@ import { connect } from 'react-redux';
 import { USER_ACTIONS } from '../../redux/actions/userActions';
 // import { Link } from 'react-router-dom';
 // import ReactChartkick, { AreaChart, LineChart, PieChart } from 'react-chartkick'
-import ReactChartkick, { AreaChart, BarChart, PieChart, LineChart} from 'react-chartkick'
+import ReactChartkick, {LineChart} from 'react-chartkick'
 import Chart from 'chart.js'
+import Nav from '../Nav/Nav';
+import './Graph.css';
+
 ReactChartkick.addAdapter(Chart)
 
 const mapStateToProps = state => ({
@@ -59,9 +62,9 @@ class Graphs extends Component {
     console.log('logging state in render', this.state.dataArray);
     if (this.props.user.userName) {
       content = (
-        <div>
+        <div className="graph">
           <p>Graphs</p>
-          <LineChart backgroundColor="white" xtitle="Time" ytitle="Temp" data={this.state.dataObject} />
+          <LineChart xtitle="Time" ytitle="Temp" data={this.state.dataObject} />
 
         </div>
       );
@@ -69,6 +72,7 @@ class Graphs extends Component {
 
     return (
       <div>
+          <Nav/>
         { content }
       </div>
     );

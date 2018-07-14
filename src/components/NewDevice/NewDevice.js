@@ -6,6 +6,8 @@ import { USER_ACTIONS } from '../../redux/actions/userActions';
 
 import { Redirect } from "react-router-dom";
 import Input from '@material-ui/core/Input';
+import Button from '@material-ui/core/Button';
+import './NewDevice.css';
 
 const mapStateToProps = state => ({
   user: state.user,
@@ -83,7 +85,7 @@ class NewDevice extends Component {
     
     if (this.props.user.userName) {
       content = (
-        <div>
+        <div className="NewDevice">
             <p>
               Add a new device
             </p>
@@ -123,7 +125,7 @@ class NewDevice extends Component {
                 value={this.state.sensor_type}
                 onChange={this.handleInputChange}
             />
-            <button onClick={this.submitNewDevice} >Add Device</button>
+            <Button vairant="raised" color="primary" onClick={this.submitNewDevice} >Add Device</Button>
         </div>
       );
     }
