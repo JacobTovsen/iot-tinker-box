@@ -1,11 +1,7 @@
-.cooling {
-    background-color: lightblue;
+p {
+    font-size: 35px;
 }
 
-.heating {
-    background-color: red;
-}
-
-.air {
-    background-color: lightgray;
+.thermostat{
+    margin: 5px;
 }

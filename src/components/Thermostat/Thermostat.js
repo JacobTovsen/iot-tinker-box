@@ -27,7 +27,7 @@ class Thermostat extends Component {
       content = (
         <div>
             
-                <div>
+                <div align="center">
                     {this.props.devices.tempReducer.map( temp => {
                             return <Temp
                             key = {temp.id}
