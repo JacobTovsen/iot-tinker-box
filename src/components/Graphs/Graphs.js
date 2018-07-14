@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { USER_ACTIONS } from '../../redux/actions/userActions';
 // import { Link } from 'react-router-dom';
-import ReactChartkick, { AreaChart, LineChart, PieChart } from 'react-chartkick'
+// import ReactChartkick, { AreaChart, LineChart, PieChart } from 'react-chartkick'
+import ReactChartkick, { AreaChart, BarChart, PieChart, LineChart} from 'react-chartkick'
 import Chart from 'chart.js'
 ReactChartkick.addAdapter(Chart)
 
@@ -12,13 +13,13 @@ const mapStateToProps = state => ({
 });
 
 class Graphs extends Component {
-    // constructor(){
-    //     super();
+    constructor(){
+        super();
   
-    //     this.state = {        
-    //           dataArray: []          
-    //     }
-    // }
+        this.state = {        
+              dataObject: {}          
+        }
+    }
   
   
     componentDidMount() {
@@ -34,26 +35,33 @@ class Graphs extends Component {
   }
 
   loopData() {
-    let dataLooped = [];  
+    let dataLooped = {};  
     console.log('this is loop data;', this.props.devices.dataReducer);
-    //   for (let data of this.props.devices.dataReducer ){
-    //       console.log(data);
-    //       dataLooped.push(data.date, data.temperature)
-    //   }
-    //   console.log(dataLooped);
-    //   this.setState({
-    //     dataArray: dataLooped
-    //     })
+      for (let data of this.props.devices.dataReducer ){
+          console.log('this is data:', data);
+        //   this.makeString(data.date);
+          dataLooped[data.date] = Number(data.temperature)
+      }
+      console.log(dataLooped);
+      this.setState({
+        dataObject: {...dataLooped}
+        })
+      console.log(this.state.dataArray);
   }
 
+//   makeString(date){
+//       toString(date);
+//       console.log('this is date in makeString:', date);
+//       return date
+//   }
   render() {
     let content = null;
-
+    console.log('logging state in render', this.state.dataArray);
     if (this.props.user.userName) {
       content = (
         <div>
           <p>Graphs</p>
-          <AreaChart data={{"2017-01-01 00:00:00 -0800": 2, "2017-01-01 00:01:00 -0800": 5}} />
+          <LineChart backgroundColor="white" xtitle="Time" ytitle="Temp" data={this.state.dataObject} />
 
         </div>
       );

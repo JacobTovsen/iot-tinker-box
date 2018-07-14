@@ -62,14 +62,14 @@ class Temp extends Component {
                             )} 
             </div>
             <Button vairant="raised" color="primary" onClick={ () => this.tempUp(this.props.temp.desired_temperature) }>
-                <svg fill="red" xmlns="http://www.w3.org/2000/svg" width="80%" height="80%" viewBox="0 0 24 24">
+                <svg fill="red" xmlns="http://www.w3.org/2000/svg" width="50%" height="50%" viewBox="0 0 24 24">
                     <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
                     <path d="M0 0h24v24H0z" fill="none"/>
                 </svg>
             </Button>
             <p>Desired Temperature: <br/>{this.props.temp.desired_temperature}</p>
             <Button vairant="raised" color="primary" onClick={ () => this.tempDown(this.props.temp.desired_temperature) }>
-                <svg fill="blue" xmlns="http://www.w3.org/2000/svg" width="80%" height="80%" viewBox="0 0 24 24">
+                <svg fill="blue" xmlns="http://www.w3.org/2000/svg" width="50%" height="50%" viewBox="0 0 24 24">
                     <path d="M7.41,8.59L12,13.17l4.59-4.58L18,10l-6,6l-6-6L7.41,8.59z"/>
                     <path d="M0 0h24v24H0z" fill="none"/>
                 </svg>
