@@ -37,7 +37,7 @@ class DeviceOverview extends Component {
             <Link to="/newDevice" style={{ textDecoration: 'none' }}>
               <Button variant="raised" color="primary">
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24px"
-	                height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" fill="white">
+	                height="24px" viewBox="0 0 24 24" enableBackground="new 0 0 24 24" fill="white">
                   <g id="Bounding_Boxes">
 	                  <g id="ui_x5F_spec_x5F_header_copy_3" display="none">
 	                  </g>
