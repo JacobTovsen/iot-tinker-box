@@ -40,7 +40,7 @@ class DeviceOverview extends Component {
             <p className="deviceDiv">
               Devices:
             </p>
-            <div className="deviceDiv">
+            <div className="devicesDiv">
                 {this.props.devices.devicesReducer.map( device => {
                   return <DeviceCard
                   key = {device.id}
