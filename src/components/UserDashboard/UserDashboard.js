@@ -49,15 +49,15 @@ class UserDashboard extends Component {
             id="welcome"
           >
             Welcome, { this.props.user.userName }!
-          </h3>
-          <div className="thermostatDiv">
-            <Thermostat/>
-          </div>
-          <Button variant="raised" color="primary"
+          <Button style={{ margin: "15px" }} variant="raised" color="primary"
             onClick={this.logout}
           >
             Log Out
           </Button>
+          </h3>
+          <div className="thermostatDiv">
+            <Thermostat/>
+          </div>
         </div>
       );
     }

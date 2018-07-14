@@ -4,6 +4,11 @@ import { USER_ACTIONS } from '../../redux/actions/userActions';
 import Nav from '../Nav/Nav';
 import DataPoint from '../DataPoint/DataPoint';
 import './Data.css';
+import Table from '@material-ui/core/Table';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import TableCell from '@material-ui/core/TableCell';
+
 const mapStateToProps = state => ({
   user: state.user,
   devices: state.devices
@@ -28,22 +33,21 @@ class Data extends Component {
       content = (
         <div>
             <p>Data from Photon</p>
-            <table align="center">
-                <thead>
-                    <tr>
-                        <th>Time</th>
-                        <th>Temperature</th>
-                        <th>Edit</th>
-                        {/* <th>Delete</th> */}
-                    </tr>
-                </thead>
+            <Table style={{backgroundColor: "white"}}>
+                <TableHead>
+                    <TableRow>
+                        <TableCell>Time</TableCell>
+                        <TableCell>Temp</TableCell>
+                        <TableCell>Edit</TableCell>
+                    </TableRow>
+                </TableHead>
                     {this.props.devices.dataReducer.map( dataPoint => {
                         return <DataPoint
                         key = {dataPoint.id}
                         dataPoint={dataPoint}
                         /> 
                     })}
-            </table>
+            </Table>
         </div>
       );
     }

@@ -40,7 +40,7 @@ const styles = theme => ({
     transition: theme.transitions.create('transform', {
       duration: theme.transitions.duration.shortest,
     }),
-    marginLeft: '25px',
+    marginLeft: '45px',
   },
   expandOpen: {
     transform: 'rotate(360deg)',
@@ -62,7 +62,7 @@ class DeviceCard extends React.Component {
 
     return (
       <div>
-        <Card className={classes.card}>
+        <Card className={classes.card} style={{marginTop: "15px"}}>
           <CardHeader
             avatar={
               <Avatar aria-label="Recipe" className={classes.avatar}>
@@ -83,10 +83,10 @@ class DeviceCard extends React.Component {
             </Typography>
           </CardContent>
           <CardActions className={classes.actions} disableActionSpacing>
-          <Link to="/data" style={{ textDecoration: 'none' }} style={{ margin:"5px"}}>
+          <Link to="/data" style={{ textDecoration: 'none', margin:"5px"}}>
             <Button variant="raised" color="primary">Data</Button>
           </Link>
-          <Link to="/graphs" style={{ textDecoration: 'none' }} style={{ margin:"5px"}}>
+          <Link to="/graphs" style={{ textDecoration: 'none', margin:"5px"}}>
             <Button variant="raised" color="primary">Graphs</Button>
           </Link>
             <IconButton
