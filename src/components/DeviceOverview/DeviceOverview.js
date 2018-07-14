@@ -35,7 +35,22 @@ class DeviceOverview extends Component {
           <div>
             <br/>
             <Link to="/newDevice" style={{ textDecoration: 'none' }}>
-              <Button variant="raised" color="primary">Add New Device</Button>
+              <Button variant="raised" color="primary">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24px"
+	                height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" fill="white">
+                  <g id="Bounding_Boxes">
+	                  <g id="ui_x5F_spec_x5F_header_copy_3" display="none">
+	                  </g>
+	                  <path fill="none" d="M0,0h24v24H0V0z"/>
+                    </g>
+                  <g id="Outline">
+                    <g id="ui_x5F_spec_x5F_header" display="none">
+                    </g>
+                    <path d="M19,13h-6v6h-2v-6H5v-2h6V5h2v6h6V13z"/>
+                  </g>
+                  </svg>
+                Add New Device
+              </Button>
             </Link>
             <p className="deviceDiv">
               Devices:
