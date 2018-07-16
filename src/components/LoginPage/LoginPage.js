@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { triggerLogin, formError, clearError } from '../../redux/actions/loginActions';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import './LoginPage.css';
 
 const mapStateToProps = state => ({
   user: state.user,
@@ -65,7 +66,7 @@ class LoginPage extends Component {
     return (
       <div>
         { this.renderAlert() }
-        <form onSubmit={this.login}>
+        <form onSubmit={this.login}  className="background">
           <h1>Login</h1>
           <div>
             <label htmlFor="username">

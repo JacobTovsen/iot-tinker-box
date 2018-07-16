@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import './RegisterPage.css';
 
 class RegisterPage extends Component {
   constructor(props) {
@@ -71,7 +72,7 @@ class RegisterPage extends Component {
     return (
       <div>
         {this.renderAlert()}
-        <form onSubmit={this.registerUser}>
+        <form onSubmit={this.registerUser}  className="background">
           <h1>Register User</h1>
           <div>
             <label htmlFor="username">
