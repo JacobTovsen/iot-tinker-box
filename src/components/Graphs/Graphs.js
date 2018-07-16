@@ -7,6 +7,7 @@ import ReactChartkick, {LineChart} from 'react-chartkick'
 import Chart from 'chart.js'
 import Nav from '../Nav/Nav';
 import './Graph.css';
+import Button from '@material-ui/core/Button';
 
 ReactChartkick.addAdapter(Chart)
 
@@ -37,6 +38,10 @@ class Graphs extends Component {
     }
   }
 
+  backNav() {
+    window.history.back();
+  } 
+
   loopData() {
     let dataLooped = {};  
       for (let data of this.props.devices.dataReducer ){
@@ -54,6 +59,7 @@ class Graphs extends Component {
       content = (
         <div className="graph">
           <p>Graphs</p>
+          <Button onClick={this.backNav}>Back</Button>
           <LineChart xtitle="Time" ytitle="Temp" data={this.state.dataObject} />
 
         </div>

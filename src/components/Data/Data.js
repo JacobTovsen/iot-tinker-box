@@ -8,6 +8,7 @@ import Table from '@material-ui/core/Table';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
+import Button from '@material-ui/core/Button';
 
 const mapStateToProps = state => ({
   user: state.user,
@@ -20,6 +21,10 @@ class Data extends Component {
     this.props.dispatch({type: 'GET_DATA'});
   }
 
+  backNav() {
+    window.history.back();
+  } 
+  
   componentDidUpdate() {
     if (!this.props.user.isLoading && this.props.user.userName === null) {
       this.props.history.push('home');
@@ -33,6 +38,7 @@ class Data extends Component {
       content = (
         <div>
             <p>Data from Photon</p>
+            <Button onClick={this.backNav}>Back</Button>
             <Table style={{backgroundColor: "white"}}>
                 <TableHead>
                     <TableRow>
