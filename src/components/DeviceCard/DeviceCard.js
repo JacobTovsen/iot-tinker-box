@@ -46,7 +46,7 @@ const styles = theme => ({
     transform: 'rotate(360deg)',
   },
   avatar: {
-    backgroundColor: red[500],
+    backgroundColor: 'rgb(222, 104, 100)',
   },
 });
 
