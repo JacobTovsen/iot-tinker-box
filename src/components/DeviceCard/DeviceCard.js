@@ -84,7 +84,7 @@ class DeviceCard extends React.Component {
           </CardContent>
           <CardActions className={classes.actions} disableActionSpacing>
           <Link to="/data" style={{ textDecoration: 'none', margin:"5px"}}>
-            <Button variant="raised" color="primary">
+            <Button style={{backgroundColor: "rgb(58,141,241)"}} variant="raised" color="primary">
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24px"
 	                    fill="white" height="24px" viewBox="0 0 24 24" enableBackground="new 0 0 24 24">
                     <g id="Bounding_Boxes">
@@ -104,7 +104,7 @@ class DeviceCard extends React.Component {
                 </svg>Data</Button>
           </Link>
           <Link to="/graphs" style={{ textDecoration: 'none', margin:"5px"}}>
-            <Button variant="raised" color="primary">
+            <Button style={{backgroundColor: "rgb(58,141,241)"}} variant="raised" color="primary">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="white" width="24" height="24" viewBox="0 0 24 24">
                     <path d="M5 9.2h3V19H5zM10.6 5h2.8v14h-2.8zm5.6 8H19v6h-2.8z"/>
                     <path fill="none" d="M0 0h24v24H0z"/>
@@ -114,6 +114,7 @@ class DeviceCard extends React.Component {
             
           </Link>
             <IconButton
+                
               className={classnames(classes.expand, {
                 [classes.expandOpen]: this.state.expanded,
               })}

@@ -34,6 +34,7 @@ class DeviceOverview extends Component {
         <div>
           <div>
             <br/>
+            <div className="headofdevices">
             <Link to="/newDevice" style={{ textDecoration: 'none' }}>
               <Button variant="raised" color="primary">
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24px"
@@ -52,9 +53,11 @@ class DeviceOverview extends Component {
                 Add New Device
               </Button>
             </Link>
-            <p className="deviceDiv">
+            <hr/>
+            {/* <p className="deviceDiv">
               Devices:
-            </p>
+            </p> */}
+            </div>
             <div className="devicesDiv">
                 {this.props.devices.devicesReducer.map( device => {
                   return <DeviceCard

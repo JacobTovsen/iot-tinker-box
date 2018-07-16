@@ -44,15 +44,16 @@ class UserDashboard extends Component {
     let content = null;
     if (this.props.user.userName) {
       content = (
-        <div>
+        <div className="top">
           <h3 id="welcome">
             Welcome, { this.props.user.userName }!
             <Button 
-              style={{ margin: "15px" }} variant="raised" color="primary"
+              style={{ margin: "15px", backgroundColor: "rgb(58,141,241)" }} variant="raised" color="primary"
               onClick={this.logout}
             >
               Log Out
             </Button>
+            <hr/>
           </h3>
           <div className="thermometer">
               <Thermostat/>

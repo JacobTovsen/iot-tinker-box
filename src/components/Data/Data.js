@@ -37,7 +37,7 @@ class Data extends Component {
                 <TableHead>
                     <TableRow>
                         <TableCell>Time</TableCell>
-                        <TableCell>Temp</TableCell>
+                        <TableCell>Temperature</TableCell>
                         <TableCell>Edit</TableCell>
                     </TableRow>
                 </TableHead>

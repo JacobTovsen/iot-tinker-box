@@ -39,24 +39,14 @@ class Graphs extends Component {
 
   loopData() {
     let dataLooped = {};  
-    console.log('this is loop data;', this.props.devices.dataReducer);
       for (let data of this.props.devices.dataReducer ){
-          console.log('this is data:', data);
-        //   this.makeString(data.date);
           dataLooped[data.date] = Number(data.temperature)
       }
-      console.log(dataLooped);
       this.setState({
         dataObject: {...dataLooped}
         })
-      console.log(this.state.dataArray);
   }
 
-//   makeString(date){
-//       toString(date);
-//       console.log('this is date in makeString:', date);
-//       return date
-//   }
   render() {
     let content = null;
     console.log('logging state in render', this.state.dataArray);

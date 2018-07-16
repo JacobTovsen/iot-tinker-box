@@ -1,6 +1,6 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: lightgray;
+    background-color: white;
 }
 
 .instructions h1 {
@@ -51,7 +51,7 @@ input[type="submit"] {
 }
 
 .navbar {
-  background-color: #00acb0;
+  background-color: rgb(222, 104, 100);
   width: 100%;
   border-radius: 0px;
 }
