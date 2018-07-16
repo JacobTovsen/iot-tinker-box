@@ -8,3 +8,6 @@ table {
     border-collapse: collapse;
 }
 
+.tableDiv {
+    width:100%;
+}

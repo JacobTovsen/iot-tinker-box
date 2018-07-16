@@ -3,9 +3,7 @@ import { connect } from 'react-redux';
 import { USER_ACTIONS } from '../../redux/actions/userActions';
 // import Modal from '@material-ui/core/Modal';
 import EditModal from '../EditModal/EditModal';
-import TableRow from '@material-ui/core/TableRow';
-import TableCell from '@material-ui/core/TableCell';
-import TableBody from '@material-ui/core/TableBody';
+
 
 const mapStateToProps = state => ({
   user: state.user,
@@ -27,18 +25,18 @@ class DataPoint extends Component {
 
     if (this.props.user.userName) {
       content = (
-          <TableRow>
-            <TableCell>{this.props.dataPoint.date}</TableCell>
-            <TableCell>{this.props.dataPoint.temperature}</TableCell>
-            <TableCell><EditModal dataPoint={this.props.dataPoint}/></TableCell>
-          </TableRow>
+          <tr>
+            <td>{this.props.dataPoint.date}</td>
+            <td>{this.props.dataPoint.temperature}</td>
+            <td><EditModal dataPoint={this.props.dataPoint}/></td>
+          </tr>
       );
     }
 
     return (
-      <TableBody>
+      <tbody>
         { content }
-      </TableBody>
+      </tbody>
     );
   }
 }

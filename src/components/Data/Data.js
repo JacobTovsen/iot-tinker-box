@@ -4,10 +4,7 @@ import { USER_ACTIONS } from '../../redux/actions/userActions';
 import Nav from '../Nav/Nav';
 import DataPoint from '../DataPoint/DataPoint';
 import './Data.css';
-import Table from '@material-ui/core/Table';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import TableCell from '@material-ui/core/TableCell';
+
 import Button from '@material-ui/core/Button';
 
 const mapStateToProps = state => ({
@@ -24,7 +21,7 @@ class Data extends Component {
   backNav() {
     window.history.back();
   } 
-  
+
   componentDidUpdate() {
     if (!this.props.user.isLoading && this.props.user.userName === null) {
       this.props.history.push('home');
@@ -39,21 +36,23 @@ class Data extends Component {
         <div>
             <p>Data from Photon</p>
             <Button onClick={this.backNav}>Back</Button>
-            <Table style={{backgroundColor: "white"}}>
-                <TableHead>
-                    <TableRow>
-                        <TableCell>Time</TableCell>
-                        <TableCell>Temperature</TableCell>
-                        <TableCell>Edit</TableCell>
-                    </TableRow>
-                </TableHead>
-                    {this.props.devices.dataReducer.map( dataPoint => {
-                        return <DataPoint
-                        key = {dataPoint.id}
-                        dataPoint={dataPoint}
-                        /> 
-                    })}
-            </Table>
+            <div className="tableDiv">
+              <table style={{backgroundColor: "white", width:"90%", margin:"auto"}}>
+                  
+                      <tr>
+                          <th>Time</th>
+                          <th>Temperature</th>
+                          <th>Edit</th>
+                      </tr>
+                  
+                      {this.props.devices.dataReducer.map( dataPoint => {
+                          return <DataPoint
+                          key = {dataPoint.id}
+                          dataPoint={dataPoint}
+                          /> 
+                      })}
+              </table>
+            </div>
         </div>
       );
     }
