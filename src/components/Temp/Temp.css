@@ -5,3 +5,15 @@ p {
 .thermostat{
     margin: 5px;
 }
+
+#heating{
+    background-color: red;
+}
+
+#cooling{
+    background-color: blue;
+}
+
+#fanOnly{
+    background-color: gray;
+}
