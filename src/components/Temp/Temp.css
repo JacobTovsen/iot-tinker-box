@@ -1,19 +1,31 @@
 p {
-    font-size: 35px;
+    font-size: 30px;
 }
 
 .thermostat{
     margin: 5px;
 }
 
-#heating{
-    background-color: red;
+#Heating{
+    background-color: rgb(222, 104, 100);
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    border: 30px solid gray;
 }
 
-#cooling{
-    background-color: blue;
+#Cooling{
+    background-color: rgb(58,141,241);
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    border: 30px solid gray;
 }
 
-#fanOnly{
-    background-color: gray;
+#Fan{
+    background-color: lightgray;
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    border: 30px solid gray;
 }

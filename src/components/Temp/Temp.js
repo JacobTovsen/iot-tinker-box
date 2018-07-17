@@ -32,11 +32,11 @@ class Temp extends Component {
 
   heatingOrCooling(){
       if (this.state.temp[0].temperature > this.props.devices.tempReducer[0].desired_temperature){
-          this.setState({heating: 'cooling'})
+          this.setState({heating: 'Cooling'})
       } else if (this.state.temp[0].temperature == this.props.devices.tempReducer[0].desired_temperature){
-          this.setState({heating: 'fanOnly'})
+          this.setState({heating: 'Fan'})
       } else {
-          this.setState({heating: 'heating'})
+          this.setState({heating: 'Heating'})
       }
   }
 
@@ -82,7 +82,9 @@ class Temp extends Component {
                 </svg>
             </Button>
             <div id={this.state.heating}>
-                <p>Desired Temperature: <br/>{this.props.temp.desired_temperature}</p>
+                <p>Desired<br/> Temperature: <br/>{this.props.temp.desired_temperature}</p>
+                <p>Currently:<br/>
+                {this.state.heating}</p>
             </div>
             <Button vairant="raised" color="primary" onClick={ () => this.tempDown(this.props.temp.desired_temperature) }>
                 <svg fill="blue" xmlns="http://www.w3.org/2000/svg" width="50%" height="50%" viewBox="0 0 24 24">
