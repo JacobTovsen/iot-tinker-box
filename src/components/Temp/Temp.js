@@ -19,9 +19,25 @@ class Temp extends Component {
     }
   }
   
-    componentDidMount() {
+    async componentDidMount() {
     this.props.dispatch({type: USER_ACTIONS.FETCH_USER});
     this.props.dispatch({type: 'GET_NEWEST_TEMP'});
+    await new Promise(resolve => {setTimeout(resolve, 50)})
+    this.setState({temp: this.props.devices.newestTempReducer});
+    console.log('actual temp:', this.state.temp[0].temperature);
+    console.log('desired temp:', this.props.devices.tempReducer[0].desired_temperature)
+    this.heatingOrCooling();
+    console.log('heating:', this.state.heating);
+  }
+
+  heatingOrCooling(){
+      if (this.state.temp[0].temperature > this.props.devices.tempReducer[0].desired_temperature){
+          this.setState({heating: 'Cooling'})
+      } else if (this.state.temp[0].temperature == this.props.devices.tempReducer[0].desired_temperature){
+          this.setState({heating: 'Fan Only'})
+      } else {
+          this.setState({heating: 'Heating'})
+      }
   }
 
   componentDidUpdate() {
