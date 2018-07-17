@@ -19,6 +19,7 @@ import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Button from '@material-ui/core/Button';
 
+
 const mapStateToProps = state => ({
     user: state.user,
   });
@@ -83,7 +84,7 @@ class DeviceCard extends React.Component {
           </CardContent>
           <CardActions className={classes.actions} disableActionSpacing>
           <Link to="/data" style={{ textDecoration: 'none', margin:"5px"}}>
-            <Button style={{backgroundColor: "rgb(58,141,241)"}} variant="raised" color="primary">
+            <Button className="data" style={{backgroundColor: "rgb(58,141,241)"}} variant="raised" color="primary">
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24px"
 	                    fill="white" height="24px" viewBox="0 0 24 24" enableBackground="new 0 0 24 24">
                     <g id="Bounding_Boxes">
