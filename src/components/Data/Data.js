@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { USER_ACTIONS } from '../../redux/actions/userActions';
+// Components
 import Nav from '../Nav/Nav';
 import DataPoint from '../DataPoint/DataPoint';
 import './Data.css';
-
+// Material UI
 import Button from '@material-ui/core/Button';
 
 const mapStateToProps = state => ({

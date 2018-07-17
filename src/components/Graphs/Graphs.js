@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { USER_ACTIONS } from '../../redux/actions/userActions';
-// import { Link } from 'react-router-dom';
-// import ReactChartkick, { AreaChart, LineChart, PieChart } from 'react-chartkick'
 import ReactChartkick, {LineChart} from 'react-chartkick'
+// Components
 import Chart from 'chart.js'
 import Nav from '../Nav/Nav';
 import './Graph.css';
+// Material UI
 import Button from '@material-ui/core/Button';
 
 ReactChartkick.addAdapter(Chart)

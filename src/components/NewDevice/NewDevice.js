@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
-import Nav from '../../components/Nav/Nav';
 import { USER_ACTIONS } from '../../redux/actions/userActions';
-
 import { Redirect } from "react-router-dom";
+// Components
+import Nav from '../../components/Nav/Nav';
+import './NewDevice.css';
+// Material UI
 import Input from '@material-ui/core/Input';
 import Button from '@material-ui/core/Button';
-import './NewDevice.css';
 
 const mapStateToProps = state => ({
   user: state.user,

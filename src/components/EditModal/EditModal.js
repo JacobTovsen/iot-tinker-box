@@ -2,12 +2,14 @@ import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { compose } from "redux";
 import { connect } from 'react-redux';
-
+// Components
+import DeleteModal from '../DeleteModal/DeleteModal';
+// Material UI
 import Typography from '@material-ui/core/Typography';
 import Modal from '@material-ui/core/Modal';
 import Button from '@material-ui/core/Button';
 import Input from '@material-ui/core/Input';
-import DeleteModal from '../DeleteModal/DeleteModal';
+
 const mapStateToProps = state => ({
     user: state.user,
   });

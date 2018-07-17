@@ -40,7 +40,8 @@ const newestTempReducer = (state = [], action) => {
     switch (action.type) {
         case 'STORE_NEWEST_TEMP':
             return action.payload
-        default:
+        
+            default:
             return state;
     }
 };

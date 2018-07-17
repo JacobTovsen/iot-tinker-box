@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { triggerLogin, formError, clearError } from '../../redux/actions/loginActions';
+import './LoginPage.css';
+//Material UI
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import './LoginPage.css';
 
 const mapStateToProps = state => ({
   user: state.user,

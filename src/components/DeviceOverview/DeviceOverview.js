@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
-import Nav from '../../components/Nav/Nav';
 import { USER_ACTIONS } from '../../redux/actions/userActions';
 import { Link } from 'react-router-dom';
+// Components
+import Nav from '../../components/Nav/Nav';
 import './DeviceOverview.css';
+// Material UI
 import DeviceCard from '../DeviceCard/DeviceCard';
-
 import Button from '@material-ui/core/Button';
-
 
 const mapStateToProps = state => ({
   user: state.user,

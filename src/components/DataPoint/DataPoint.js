@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { USER_ACTIONS } from '../../redux/actions/userActions';
-// import Modal from '@material-ui/core/Modal';
+// Material UI
 import EditModal from '../EditModal/EditModal';
 
 
