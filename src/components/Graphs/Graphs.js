@@ -27,10 +27,11 @@ class Graphs extends Component {
     }
   
   
-    componentDidMount() {
+    async componentDidMount() {
     this.props.dispatch({type: USER_ACTIONS.FETCH_USER});
     this.props.dispatch({type: 'GET_DATA'});
     this.props.dispatch({type: 'GET_API_DATA'});
+    await new Promise(resolve => {setTimeout(resolve, 50)})
     this.loopData();
     this.loopApiData();
   }
@@ -57,7 +58,7 @@ class Graphs extends Component {
 
   loopApiData() {
     let dataLooped = {};  
-      for (let data of this.props.devices.dataReducer ){
+      for (let data of this.props.devices.apiDataReducer ){
           dataLooped[data.date] = Number(data.temperature)
       }
       this.setState({
@@ -68,13 +69,16 @@ class Graphs extends Component {
   render() {
     let content = null;
     console.log('logging state in render', this.state.dataArray);
+    let graphData = [
+      {"name":"Photon Data", "data":this.state.dataObject},
+      {"name":"Weather API Data", "data":this.state.apiDataObject}
+    ];
     if (this.props.user.userName) {
       content = (
         <div className="graph">
           <p>Graphs</p>
           <Button onClick={this.backNav}>Back</Button>
-          <LineChart xtitle="Time" ytitle="Temp" data={this.state.dataObject} />
-
+          <LineChart download={true} xtitle="Time" ytitle="Temp" data={graphData}/>
         </div>
       );
     }
