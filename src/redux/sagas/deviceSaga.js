@@ -75,6 +75,15 @@ function* editData(action){
     }
 }
 
+function* getApiData(){
+    try{
+        const data = yield call(axios.get, '/api/device/weather');
+        yield put({type: 'STORE_API_DATA', payload: data.data})
+    } catch (error) {
+        console.log('Error in saga getData:', error);
+    }
+}
+
 function* deviceSaga(){
     yield takeEvery( 'GET_DEVICES', fetchAllDevices);
     yield takeEvery( 'ADD_DEVICE', addNewDevice);
@@ -84,6 +93,8 @@ function* deviceSaga(){
     yield takeEvery( 'NEW_TEMP', newTemp);
     yield takeEvery( 'GET_NEWEST_TEMP', getNewestTemp);
     yield takeEvery( 'EDIT_DATA', editData);
+    yield takeEvery( 'GET_API_DATA', getApiData);
+
 }
 
 export default deviceSaga;

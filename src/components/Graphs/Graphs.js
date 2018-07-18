@@ -21,7 +21,8 @@ class Graphs extends Component {
         super();
   
         this.state = {        
-              dataObject: {}          
+              dataObject: {},
+              apiDataObject: {}          
         }
     }
   
@@ -29,7 +30,9 @@ class Graphs extends Component {
     componentDidMount() {
     this.props.dispatch({type: USER_ACTIONS.FETCH_USER});
     this.props.dispatch({type: 'GET_DATA'});
+    this.props.dispatch({type: 'GET_API_DATA'});
     this.loopData();
+    this.loopApiData();
   }
 
   componentDidUpdate() {
@@ -49,6 +52,16 @@ class Graphs extends Component {
       }
       this.setState({
         dataObject: {...dataLooped}
+        })
+  }
+
+  loopApiData() {
+    let dataLooped = {};  
+      for (let data of this.props.devices.dataReducer ){
+          dataLooped[data.date] = Number(data.temperature)
+      }
+      this.setState({
+        apiDataObject: {...dataLooped}
         })
   }
 
