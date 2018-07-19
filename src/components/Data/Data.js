@@ -36,16 +36,17 @@ class Data extends Component {
       content = (
         <div>
             <p>Data from Photon</p>
-            <Button onClick={this.backNav}>Back</Button>
+            <Button variant="raised" onClick={this.backNav}>Back</Button>
+            <hr/>
             <div className="tableDiv">
               <table style={{backgroundColor: "white", width:"90%", margin:"auto"}}>
-                  
+                  <thead>
                       <tr>
                           <th>Time</th>
                           <th>Temperature</th>
                           <th>Edit</th>
                       </tr>
-                  
+                  </thead>
                       {this.props.devices.dataReducer.map( dataPoint => {
                           return <DataPoint
                           key = {dataPoint.id}

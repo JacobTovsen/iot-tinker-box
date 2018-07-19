@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { compose } from "redux";
 import { Link } from 'react-router-dom';
 import './DeviceCard.css';
+import DeviceDelete from '../DeviceDelete/DeviceDelete'
 // Material UI
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
@@ -136,6 +137,7 @@ class DeviceCard extends React.Component {
               <Typography paragraph>
                 Device Access Token: {this.props.device.access_token}
               </Typography>
+              <DeviceDelete device={this.props.device}/>
             </CardContent>
           </Collapse>
         </Card>

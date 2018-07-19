@@ -77,7 +77,8 @@ class Graphs extends Component {
       content = (
         <div className="graph">
           <p>Graphs</p>
-          <Button onClick={this.backNav}>Back</Button>
+          <Button variant="raised" onClick={this.backNav}>Back</Button>
+          <hr/>
           <LineChart download={true} xtitle="Time" ytitle="Temp" data={graphData}/>
         </div>
       );

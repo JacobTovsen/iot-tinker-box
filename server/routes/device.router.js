@@ -140,6 +140,19 @@ router.delete('/:id', (req, res) => {
     }
 });
 
+router.delete('/delete/:id', (req, res) => {
+    console.log('this is req.params',req.params);
+    if(req.isAuthenticated()){
+        queryText = `DELETE FROM device where id = $1;`;
+        pool.query(queryText, [req.params.id]).then(result => {
+            res.sendStatus(200);
+        }).catch(error => {
+            console.log('Error handling DELETE for /delete:', error);});
+    } else {
+        res.sendStatus(403);
+    }
+});
+
 router.put('/data/edit/:id', (req, res) => {
     console.log('this is req.params',req.params);
     console.log('this is req.body:', req.body);

@@ -38,6 +38,15 @@ function* deleteData(action){
     }
 }
 
+function* deleteDevice(action){
+    try{
+        console.log('this is action.payload:', action.payload);
+        yield call(axios.delete, `/api/device/delete/${action.payload}`);
+        yield put({type:'GET_DEVICES'});
+    } catch (error ) {
+        console.log('Error in saga deleteDevice:', error);
+    }
+}
 function* getTemp(){
     try{
         const temp = yield call(axios.get, '/api/device/temp');
@@ -94,6 +103,7 @@ function* deviceSaga(){
     yield takeEvery( 'GET_NEWEST_TEMP', getNewestTemp);
     yield takeEvery( 'EDIT_DATA', editData);
     yield takeEvery( 'GET_API_DATA', getApiData);
+    yield takeEvery( 'DELETE_DEVICE', deleteDevice);
 
 }
 
