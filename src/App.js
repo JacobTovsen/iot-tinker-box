@@ -15,6 +15,7 @@ import NewDevice from './components/NewDevice/NewDevice';
 import Data from './components/Data/Data';
 import Graphs from './components/Graphs/Graphs';
 import EditModal from './components/EditModal/EditModal';
+import Tech from './components/Tech/Tech';
 
 import './styles/main.css';
 
@@ -55,6 +56,10 @@ const App = () => (
         <Route
           path="/editModal"
           component={EditModal}
+        />
+         <Route
+          path="/tech"
+          component={Tech}
         />
         {/* OTHERWISE (no path!) */}
         <Route render={() => <h1>404</h1>} />

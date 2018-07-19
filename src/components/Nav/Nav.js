@@ -15,6 +15,11 @@ const Nav = () => (
             Devices
           </Link>
         </li>
+        <li>
+          <Link to="/tech">
+            Tech
+          </Link>
+        </li>
       </ul>
     </div>
   </div>
