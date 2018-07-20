@@ -43,6 +43,7 @@ class Tech extends Component {
             <li>Express</li><br/>
             <li>PostgreSQL</li><br/>
             <li>Charts.js</li><br/>
+            <li>OpenWeatherMap API</li><br/>
           </ul>
         </div>
       );
