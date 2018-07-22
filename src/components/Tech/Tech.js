@@ -44,6 +44,9 @@ class Tech extends Component {
             <li>PostgreSQL</li><br/>
             <li>Charts.js</li><br/>
             <li>OpenWeatherMap API</li><br/>
+
+            <li>Create bio view to end presentation on.  Use nav bar for routing</li><br/>
+
           </ul>
         </div>
       );
