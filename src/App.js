@@ -16,6 +16,7 @@ import Data from './components/Data/Data';
 import Graphs from './components/Graphs/Graphs';
 import EditModal from './components/EditModal/EditModal';
 import Tech from './components/Tech/Tech';
+import Bio from './components/Bio/Bio';
 
 import './styles/main.css';
 
@@ -60,6 +61,10 @@ const App = () => (
          <Route
           path="/tech"
           component={Tech}
+        />
+        <Route
+          path="/bio"
+          component={Bio}
         />
         {/* OTHERWISE (no path!) */}
         <Route render={() => <h1>404</h1>} />

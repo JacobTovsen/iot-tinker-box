@@ -12,7 +12,7 @@ const mapStateToProps = state => ({
   user: state.user,
 });
 
-class Tech extends Component {
+class Bio extends Component {
 
   componentDidMount() {
    
@@ -30,21 +30,10 @@ class Tech extends Component {
     if (this.props.user.userName) {
       content = (
         <div className="graph">
-          <h3>Tech used for this project include:</h3>
-          <ul>
-            <li>Particle Photon</li><br/>
-            <li>Node-Cron</li><br/>
-            <li>JavaScript</li><br/>
-            <li>React.js</li><br/>
-            <li>Material UI</li><br/>
-            <li>Redux</li><br/>
-            <li>Redux-Saga</li><br/>
-            <li>Node.js</li><br/>
-            <li>Express</li><br/>
-            <li>PostgreSQL</li><br/>
-            <li>Charts.js</li><br/>
-            <li>OpenWeatherMap API</li><br/>
-          </ul>
+          <h3>Jake Tovsen</h3>
+          <h4>jacobtovsen@gmail.com</h4>
+          <h4>github.com/JacobTovsen</h4>
+          
         </div>
       );
     }
@@ -59,4 +48,4 @@ class Tech extends Component {
 }
 
 // this allows us to use <App /> in index.js
-export default connect(mapStateToProps)(Tech);
+export default connect(mapStateToProps)(Bio);
